@@ -1,0 +1,209 @@
+doctype html
+html(lang='UTF-8')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Категория
+        link(rel='apple-touch-icon' sizes='180x180' href='./apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png')
+        link(href='./css/libs.min.css', rel='stylesheet')
+        link(href='./css/style.min.css', rel='stylesheet')
+
+    body.category__page
+
+        include ../block/header
+
+        .section
+            .container
+                .row
+                    .lg-12.breadcrumbs
+                        a(href='#') Главная
+                        a(href='#') Каталог
+                        a.active(href='#') Стаканы
+                    .lg-3.md-12
+                        ul.dropdown__menu
+                            li.dropdown__item.active
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-1.svg' alt='')
+                                    | Стаканы
+                                    span.arrow
+                                ul.dropdown__submenu
+                                    li: a(href='#') Стаканы однослойные
+                                    li: a(href='#') Стаканы двухслойные
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-2.svg' alt='')
+                                    | Крышки
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-3.svg' alt='')
+                                    | Упаковка
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-4.svg' alt='')
+                                    | Контейнеры
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-5.svg' alt='')
+                                    | Креманки
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-6.svg' alt='')
+                                    | Посуда
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-7.svg' alt='')
+                                    | Дополнительный ассортимент
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-8.svg' alt='')
+                                    | Упаковочная бумага
+                                    span.arrow
+                            li.dropdown__item
+                                a(href='#')
+                                    span
+                                        img(src='./img/menu_ico/ico-9.svg' alt='')
+                                    | Акции
+                                    span.arrow
+
+                    .lg-9.md-12
+                        .h2 Стаканы
+                            span Стаканы
+                        .row.products__wrapper
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-4.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Стаканчик бумажный однослойный,Кофе
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-2.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                .products__desc
+                                    a.products__title(href='#') Стакан бумажный однослойный, белый
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-1.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                .products__desc
+                                    a.products__title(href='#') Коробка бумажная для гамбургера Fiesta
+                                    ul.product__price
+                                        li.order Под заказ
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-2.png' alt='')
+                                    .product__tags
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-1.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-3.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-1.png' alt='')
+                                    .product__tags
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-3.png' alt='')
+                                    .product__tags
+                                        span.new New
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+                            .lg-4.md-6.products__item
+                                .products__img
+                                    img.img(src='./img/product-2.png' alt='')
+                                    .product__tags
+                                        span.sale Sale
+                                .products__desc
+                                    a.products__title(href='#') Обертка для фастфуд «Fiesta»
+                                    ul.product__price
+                                        li.old__price 3,40 руб
+                                        li от 2,55 BYN/
+                                            span 1000 шт
+                                a.btn.btn_buy(href='#') Купить
+
+        .section.text__section
+            .container
+                .h2 Описание раздела
+                    span О Разделе
+                .text
+                    p Краткое описание: В данном блоке отображается информация о компании и преимуществах ее работы. Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке. Краткое описание: В данном блоке отображается информация о компании и преимуществах ее работы. Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
+                    p Краткое описание: В данном блоке отображается информация о компании и преимуществах ее работы. Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке.
+
+        include ../block/footer
+
+        script(src='./js/libs.min.js')
+        script(src='./js/main.min.js')

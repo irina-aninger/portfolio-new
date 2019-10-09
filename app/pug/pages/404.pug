@@ -1,0 +1,35 @@
+doctype html
+html(lang='UTF-8')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title 404
+        link(rel='apple-touch-icon' sizes='180x180' href='./apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png')
+        link(href='./css/libs.min.css', rel='stylesheet')
+        link(href='./css/style.min.css', rel='stylesheet')
+
+    body
+
+        include ../block/header
+
+        .section.page__404
+            .container
+                .row.wrapper__404
+                    .lg-4.md-12
+                        p.title__1 404
+                        p.title__2 Упс! Что-то пошло не так!
+                        p.desc Такая страница не существует или произошел сбой. Пожалуйста, перезагрузите или вернитесь на сайт через меню
+                        .btn__box
+                            |
+                            a.btn(href='#') Назад
+                            |
+                            |
+                            a.btn.btn__border(href='#') На главную
+                    .lg-8.md-12.img__404
+                        |
+                        img(src='./img/404.png' alt='')
+
+        script(src='./js/libs.min.js')
+        script(src='./js/main.min.js')

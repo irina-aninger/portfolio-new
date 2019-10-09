@@ -1,0 +1,1906 @@
+@import 'fonts.sass'
+@import 'grid.sass'
+
+//MIXIN
+@mixin x_large
+  @media (min-width: 1200px)
+    @content
+
+@mixin large
+  @media (max-width: 1199px)
+    @content
+
+@mixin medium
+  @media (max-width: 991px)
+    @content
+
+@mixin small
+  @media (max-width: 767px)
+    @content
+
+@mixin xs_small
+  @media (max-width: 575px)
+    @content
+//END MIXIN
+
+
+//ANIMATION
+//END ANIMATION
+
+
+html
+  box-sizing: border-box
+  -ms-overflow-style: scrollbar
+  scroll-behavior: smooth
+
+body
+  font: normal 16px/1em 'Opensans', sans-serif
+  line-height: 22px
+  color: #828589
+  background: #fdfdfd
+  @include medium
+    font-size: 14px
+    line-height: 19px
+    background: #f9f9f9
+
+  &.open__modal
+    overflow: hidden
+
+*::before,
+*::after
+  box-sizing: inherit
+
+::placeholder
+  color: rgba(0, 0, 0, 0.33)
+  opacity: 1
+  font-size: 16px
+  font-style: italic
+  @include medium
+    font-size: 12px
+
+input:-ms-input-placeholder
+  color: rgba(0, 0, 0, 0.33) !important
+  opacity: 1 !important
+  font-size: 16px !important
+  font-style: italic !important
+
+textarea:-ms-input-placeholder
+  color: rgba(0, 0, 0, 0.33) !important
+  opacity: 1 !important
+  font-size: 16px !important
+  font-style: italic !important
+
+button,
+input,
+textarea,
+select
+  &:focus
+    outline: none
+    outline-offset: 0
+
+select
+  border: none
+  background: transparent
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  &::-ms-expand
+    display: none
+
+input
+  font-size: 16px
+  border: none
+  line-height: 22px
+  border-radius: 5px
+  box-sizing: border-box
+  @include medium
+    font-size: 12px
+  &[type="number"]
+    -moz-appearance: textfield
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+  &[type='text'],
+  &[type='tel'],
+  &[type='email']
+    width: 100%
+  &[type='search']
+    font-size: 14px
+    &::placeholder
+      font-size: 14px
+      font-style: normal
+      color: #949491
+    &:-ms-input-placeholder
+      font-size: 14px !important
+      font-style: normal !important
+      color: #949491 !important
+  &[type='submit']
+    display: inline-block
+    cursor: pointer
+
+textarea
+  border: none
+  border-radius: 5px
+  box-sizing: border-box
+  width: 100%
+  resize: none
+  line-height: 22px
+
+h1,
+h2,
+.h1,
+.h2
+  font-size: 24px
+  line-height: 33px
+  color: rgba(0, 0, 0, 0.65)
+  margin: 0
+  @include medium
+    font-size: 20px
+
+.h1,
+.h2
+  position: relative
+  padding: 59px 0 40px 0
+  margin: 25px 0
+  @include medium
+    padding: 20px 0 0 0
+    margin: 25px 0 15px 0
+  span
+    position: absolute
+    left: 21px
+    font-size: 100px
+    font-weight: 800
+    color: rgba(0, 0, 0, 0.03)
+    @include large
+      font-size: 76px
+    @include medium
+      font-size: 50px
+      top: 10px
+      width: max-content
+    //&::before
+    //  content: ""
+    //  position: absolute
+    //  width: 55%
+    //  height: 1px
+    //  background: rgba(0,0,0,.08)
+    //  top: 57%
+    //  left: 15%
+    //  @include medium
+    //    width: 100%
+    //    top: 80%
+    //    left: 30%
+
+.h3
+  font-size: 20px
+  font-weight: 600
+  color: #545454
+  padding: 20px 0
+  @include medium
+    font-size: 16px
+    line-height: 26px
+    padding: 8px 0
+
+.title
+  font-weight: bold
+  padding-top: 0 !important
+  margin-bottom: -5px
+
+a
+  text-decoration: none
+  cursor: pointer
+  box-sizing: border-box
+
+  &:hover
+    color: #493F7B
+
+ul,
+li
+  padding: 0
+  margin: 0
+  list-style: none
+
+img
+  max-width: 100%
+  width: auto
+  height: auto
+  vertical-align: middle
+
+div
+  box-sizing: border-box
+
+.container
+  width: 100%
+  padding-right: 10px
+  padding-left: 10px
+  margin-right: auto
+  margin-left: auto
+  @include x_large
+    width: 1180px
+  @include large
+    width: 960px
+  @include medium
+    width: 720px
+    padding-right: 20px
+    padding-left: 20px
+  @include small
+    width: 540px
+  @include xs_small
+    width: auto
+
+.section
+  @include medium
+    overflow: hidden
+  &#about-company
+    margin-bottom: -65px
+    overflow: hidden
+    @include medium
+      margin-bottom: 0
+      margin-top: -110px
+  &#faq
+    margin-bottom: -305px
+    @include medium
+      margin-bottom: 0
+      position: relative
+      overflow: hidden
+  &#contacts
+    overflow: hidden
+  &.text__section
+    padding-top: 0
+    padding-bottom: 55px
+    @include large
+      overflow: hidden
+      padding-top: 10px
+    @include medium
+      padding-top: 15px
+      padding-bottom: 40px
+    .h2
+      margin-bottom: 0
+      @include medium
+        margin-bottom: 17px
+  &#delivery-1
+    padding: 0 0 70px 0
+    overflow: hidden
+    @include medium
+      padding: 0 0 32px 0
+  &#delivery-2
+    padding: 55px 0 35px
+    @include medium
+      padding: 33px 0
+    .text
+      padding-bottom: 10px
+  &#about-1
+    padding-bottom: 88px
+    @include medium
+      padding-bottom: 0
+      .text
+        padding-left: 60px
+  &#about-2
+    padding-top: 290px
+    margin-bottom: 100px
+    @include medium
+      padding-top: 60px
+    .h3
+      padding-top: 0
+      padding-bottom: 48px
+  &.bg__gray
+    background: rgba(247, 247, 247, 0.8)
+  &.bg__beige
+    background: url('.././img/bg-beige.png')
+  &.bg__orange
+    background: #E56943
+    color: rgba(255, 255, 255, 0.79)
+    .h1
+      color: #FFFFFF
+      span
+        color: rgba(255, 255, 255, 0.05)
+        width: max-content
+        left: -25%
+        @include medium
+          left: 0
+          top: 0
+
+.box
+  padding: 5px 0 0
+  a
+    padding-bottom: 11px
+  p
+    display: flex
+    flex-direction: column
+    padding-top: 5px
+
+.btn
+  display: inline-flex
+  justify-content: center
+  background: #e56943
+  color: #fff
+  border-radius: 4px
+  padding: 12px 5px
+  width: 160px
+  &:hover
+    color: #fff
+  @include medium
+    font-size: 16px
+  &.btn__white
+    width: 110px
+    padding: 6px 5px
+    background: #FFFFFF
+    color: #2E2E2E
+    &:hover
+      color: #E56943
+  &.btn__transp
+    background: none
+    border: 1px solid #FFFFFF
+    &:hover
+      background: #E56943
+      border: 1px solid #E56943
+      color: #FFFFFF
+
+.img__full
+  position: absolute
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+
+.aling__center
+  position: absolute
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #FFFFFF
+  line-height: initial
+  text-align: center
+
+.vertical__aling
+  align-items: center
+
+.mobile__hidden
+  @include medium
+    display: none
+
+.mobile__visible
+  display: none
+  @include medium
+    display: block
+
+.top__line
+  background: #F4F4F4
+  padding: 18px 0
+  @include medium
+    display: none
+  .top__info
+    display: flex
+    justify-content: space-between
+    color: #757472
+    font-size: 14px
+    font-weight: 300
+    @include large
+      font-size: 12px
+    a
+      color: #757472
+
+.logo
+  a
+    img
+      max-width: 130px
+    @include medium
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        max-width: 80px
+
+.header__wrapper
+  padding: 25px 0 40px 0
+  background: #ffffff
+  overflow: hidden
+  @include medium
+    background: #f9f9f9
+    padding: 23px 0 23px 0
+  .search
+    border-bottom: 1px solid #E4E4E4
+    padding: 9px 0 11px 0
+    position: relative
+    @include medium
+      display: none
+    &::before
+      position: absolute
+      right: 3px
+      bottom: 6px
+      content: url('.././img/search-ico.svg')
+    input
+      width: 90%
+      color: #282828
+
+.header__cart
+  align-self: flex-end
+  text-align: right
+  position: relative
+  padding-bottom: 3px
+  @include medium
+    align-self: center
+    &::before
+      content: ''
+      position: absolute
+      left: 33%
+      top: -12px
+      width: 800px
+      height: 49px
+      background: #FFFFFF
+      border-radius: 100px
+  a
+    padding-right: 15px
+    position: relative
+    @include medium
+      img
+        max-width: 24px
+  .cart__count
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    top: -16px
+    right: 0
+    width: 24px
+    height: 24px
+    font-size: 14px
+    color: #FFFFFF
+    background: #342E58
+    border-radius: 50%
+    @include medium
+      width: 20px
+      height: 20px
+      top: -8px
+
+.header__navbar
+  background: #E56943
+  @include medium
+    display: none
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.navbar__wrapper
+  display: flex
+  align-items: center
+  position: relative
+  .catalog__link
+    padding-left: 30px
+    position: relative
+    padding-top: 17px
+    padding-bottom: 17px
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='20' height='11' viewBox='0 0 20 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='20' y2='0.5' stroke='%23FAE1D9'/%3E%3Cline y1='5.5' x2='20' y2='5.5' stroke='%23FAE1D9'/%3E%3Cline y1='10.5' x2='20' y2='10.5' stroke='%23FAE1D9'/%3E%3C/svg%3E%0A")
+      position: absolute
+      left: 0
+      @include medium
+        content: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.60775 8.64117L1.11653 0.149945C0.916602 -0.0499817 0.595965 -0.0499817 0.396039 0.149945C0.196112 0.349872 0.196112 0.670509 0.396039 0.870435L8.52513 8.99953L0.396039 17.1286C0.196112 17.3285 0.196112 17.6492 0.396039 17.8491C0.494116 17.9472 0.626143 18 0.754398 18C0.882653 18 1.01468 17.951 1.11276 17.8491L9.60398 9.35789C9.80391 9.16173 9.80391 8.83732 9.60775 8.64117Z' fill='white'/%3E%3C/svg%3E%0A")
+        right: 0
+        left: auto
+        padding-left: 30px
+    &:hover
+      .catalog__menu
+        display: block
+  > li
+    position: relative
+    padding-right: 59px
+    text-transform: uppercase
+    font-weight: bold
+    @include large
+      padding-right: 30px
+    &:last-child
+      padding-right: 0
+    a
+      color: rgba(255, 255, 255, 0.8)
+  .catalog__menu
+    display: none
+    position: absolute
+    width: 220px
+    top: 100%
+    left: -20px
+    background: #FDFDFD
+    z-index: 10
+    @include medium
+      position: inherit
+      width: 100%
+      left: 0
+      background: #e56943
+      box-shadow: none
+      top: 20px
+    li
+      padding: 14px 30px 14px 20px
+      &:hover
+        background: #E9E6FF
+      &:last-child
+        background: #F3F3F3
+        padding-left: 58px
+      a
+        display: flex
+        color: #333333
+        text-transform: initial
+        font-weight: 600
+        span
+          display: flex
+          align-items: center
+          padding-right: 20px
+      img
+        max-width: 20px
+        max-height: 20px
+    .catalog__sublink
+      &:hover
+        .catalog__submenu
+          display: block
+  .catalog__submenu
+    display: none
+    position: absolute
+    right: -200px
+    height: 100%
+    width: 200px
+    top: 0
+    background: #FDFDFD
+    border-left: 1px solid #E9E9E9
+    li
+      background: none !important
+      padding: 16px 30px 16px 20px !important
+      a
+        &:hover
+          text-decoration: underline
+
+.burger
+  display: none
+  @include medium
+    display: block
+  span
+    display: block
+    width: 16px
+    height: 2px
+    background: rgba(0, 0, 0, 0.7)
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    &::before
+      content: ''
+      position: absolute
+      top: -10px
+      width: 32px
+      height: 2px
+      background: rgba(0, 0, 0, 0.7)
+    &::after
+      content: ''
+      position: absolute
+      top: 10px
+      width: 32px
+      height: 2px
+      background: rgba(0, 0, 0, 0.7)
+
+.mobile__navbar
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100%
+  background: #e56943
+  z-index: 10
+  overflow: auto
+  .mobile__top
+    padding: 25px 0
+    .close
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 15px
+        width: 28px
+        height: 1px
+        background: #FFFFFF
+        transform: rotate(45deg)
+      &::after
+        content: ''
+        position: absolute
+        top: 15px
+        width: 28px
+        height: 1px
+        background: #FFFFFF
+        transform: rotate(135deg)
+    .header__cart
+      &::before
+        left: 20px
+        top: -10px
+      a
+        top: 3px
+      .cart__count
+        left: 19px
+  .navbar__wrapper
+    flex-direction: column
+    align-items: inherit
+    li
+      font-size: 24px
+      font-weight: normal
+      text-transform: inherit
+      color: #FFFFFF
+      padding: 22px 0
+      border-top: 1px solid rgba(255, 255, 255, 0.05)
+      &:last-child
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+  .catalog__menu
+    li
+      padding: 13px 0 13px 13px
+      &:last-child
+        background: inherit
+        padding-left: 52px
+    a
+      color: #f6cdc0 !important
+      font-size: 18px
+    img
+      filter: brightness(200%)
+
+.mobile__adress
+  font-size: 14px
+  color: rgba(255, 255, 255, 0.6)
+  padding-top: 18px
+  a
+    font-size: 14px
+    color: rgba(255, 255, 255, 0.6)
+  .mobile__box
+    display: flex
+    flex-direction: column
+  .phone
+    position: relative
+    padding: 15px 0 15px 34px
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M19.5516 15.806L16.4629 12.7169C15.8477 12.1042 14.8289 12.1228 14.1923 12.7597L12.6362 14.3154C12.5379 14.2612 12.4361 14.2046 12.3291 14.1446C11.3465 13.6001 10.0015 12.8539 8.58628 11.4376C7.16683 10.0183 6.41986 8.67127 5.87372 7.68799C5.81609 7.58381 5.76087 7.48338 5.70634 7.388L6.75071 6.34518L7.26416 5.8311C7.90178 5.19331 7.91936 4.1748 7.30559 3.56028L4.2169 0.470905C3.60313 -0.142752 2.58387 -0.124135 1.94626 0.513654L1.07576 1.38915L1.09955 1.41277C0.807657 1.78521 0.563746 2.21477 0.382234 2.678C0.214915 3.11894 0.110743 3.53971 0.0631095 3.96134C-0.344731 7.34243 1.20033 10.4325 5.39342 14.6256C11.1896 20.4214 15.8605 19.9835 16.062 19.9622C16.5009 19.9097 16.9214 19.8048 17.3489 19.6388C17.8081 19.4595 18.2374 19.2159 18.6096 18.9246L18.6286 18.9415L19.5105 18.078C20.1468 17.4403 20.1651 16.4215 19.5516 15.806Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+      position: absolute
+      left: 0
+  .adress
+    position: relative
+    padding: 15px 0 15px 34px
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99951 0C5.93986 0 2.63672 3.30314 2.63672 7.3632C2.63672 8.42222 2.85348 9.43334 3.28065 10.3687C5.12155 14.3971 8.65107 18.6501 9.68921 19.8575C9.76699 19.9478 9.88038 19.9998 9.99971 19.9998C10.119 19.9998 10.2324 19.9478 10.3102 19.8575C11.3479 18.6503 14.8775 14.3975 16.719 10.3687C17.1464 9.43334 17.3629 8.42222 17.3629 7.3632C17.3625 3.30314 14.0594 0 9.99951 0ZM9.99951 11.1877C7.89068 11.1877 6.17484 9.47182 6.17484 7.36299C6.17484 5.25396 7.89068 3.53812 9.99951 3.53812C12.1083 3.53812 13.8242 5.25396 13.8242 7.36299C13.8244 9.47182 12.1085 11.1877 9.99951 11.1877Z' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E%0A")
+      position: absolute
+      left: 0
+
+.slide__item
+  position: relative
+  height: 733px
+  @include medium
+    height: 450px
+  .aling__center
+    background: rgba(0, 0, 0, 0.4)
+    .slide__wrapper
+      width: 80%
+      padding: 15px
+      @include medium
+        width: 100%
+    p
+      margin: 0
+    .slide__title
+      font-size: 100px
+      font-weight: bold
+      @include medium
+        font-size: 36px
+        padding: 6px 0
+    .slide__sub-title
+      font-size: 46px
+      font-weight: 300
+      @include medium
+        font-size: 20px
+    .slide__desc
+      font-weight: 400
+      line-height: 1.7em
+      width: 48%
+      margin: 15px auto
+      @include medium
+        width: 100%
+    .slide__link
+      margin-top: 45px
+
+.slick-dots
+  position: absolute
+  bottom: 38px
+  display: flex
+  justify-content: center
+  width: 100%
+  button
+    width: 60px
+    height: 4px
+    background: rgba(255, 255, 255, 0.16)
+    margin: 0 6px
+    border: none
+    border-radius: 100px
+  .slick-active
+    button
+      background: rgba(255, 255, 255, 0.55)
+
+.slick-arrow
+  position: absolute
+  top: -45%
+  bottom: 0
+  margin: auto
+  height: 30px
+  width: 30px
+  background: none
+  border: none
+  z-index: 10
+  &.slick-next
+    right: -30px
+    @include medium
+      right: 0
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M10.5835 6.72091L3.97925 0.116624C3.82375 -0.0388746 3.57437 -0.0388746 3.41887 0.116624C3.26337 0.272122 3.26337 0.521507 3.41887 0.677005L9.7415 6.99963L3.41887 13.3223C3.26337 13.4778 3.26337 13.7271 3.41887 13.8826C3.49515 13.9589 3.59784 14 3.69759 14C3.79735 14 3.90004 13.9619 3.97632 13.8826L10.5806 7.27836C10.7361 7.12579 10.7361 6.87347 10.5835 6.72091Z' fill='%23C9C9C9'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='14' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+  &.slick-prev
+    left: -30px
+    @include medium
+      left: 0
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M3.41646 6.72091L10.0207 0.116624C10.1762 -0.0388746 10.4256 -0.0388746 10.5811 0.116624C10.7366 0.272122 10.7366 0.521507 10.5811 0.677005L4.2585 6.99963L10.5811 13.3223C10.7366 13.4778 10.7366 13.7271 10.5811 13.8826C10.5048 13.9589 10.4022 14 10.3024 14C10.2027 14 10.1 13.9619 10.0237 13.8826L3.4194 7.27836C3.2639 7.12579 3.2639 6.87347 3.41646 6.72091Z' fill='%238D8D8D'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='14' height='14' fill='white' transform='matrix(-1 0 0 1 14 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+
+.category__wrapper
+  display: flex
+  flex-wrap: wrap
+  overflow: hidden
+  .category__item
+    height: 390px
+    width: calc(100%/3)
+    position: relative
+    span
+      position: absolute
+      margin-top: -50px
+      @include medium
+        margin-top: -40px
+        width: 40px
+        height: 40px
+    @include medium
+      width: calc(100%/2)
+      height: 188px
+      &:last-child
+        width: 100%
+        height: 200px
+    .aling__center
+      background: rgba(0, 0, 0, 0.4)
+    .catalog__title
+      font-size: 28px
+      position: relative
+      width: 100%
+      @include medium
+        font-size: 18px
+        padding: 20px
+    .btn
+      font-size: initial
+      position: absolute
+      top: 70px
+      left: 0
+      right: 0
+      margin: auto
+      opacity: 0
+      @include medium
+        margin-top: 50px
+        padding: 7px 5px
+        width: 140px
+    &:hover
+      .btn
+        opacity: 1
+
+.tabs__filter
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  @include medium
+    justify-content: space-between
+    margin-bottom: 20px
+  input
+    width: 0
+    display: none
+    &:checked + [for]
+      border: 1px solid #E56943
+      border-radius: 3px
+      padding: 3px 19px
+      font-weight: 600
+  label
+    color: #606060
+    padding: 5px 19px
+    margin-right: 10px
+    margin-top: 20px
+    box-sizing: border-box
+    cursor: pointer
+    @include medium
+      margin-top: 0
+    &:last-child
+      padding-right: 0
+      margin-right: 0
+
+.category__page
+  .section
+    .h2
+      margin: 0
+      padding: 0 0 40px
+      z-index: 2
+      @include medium
+        padding: 0 0 20px
+    &.text__section
+      .h2
+        margin: 0
+        padding: 0 0 47px
+        z-index: 2
+        @include medium
+          padding: 0 0 17px
+  .product__tags
+    .new
+      background: #2B2B2B
+
+.product__tags
+  display: flex
+  flex-direction: column
+  position: absolute
+  left: 16px
+  top: 12px
+  font-size: 12px
+  color: #FFFFFF
+  text-transform: uppercase
+  @include medium
+    font-size: 10px
+  span
+    padding: 0 8px
+    margin-bottom: 9px
+    &:last-child
+      margin-bottom: 0
+    &.sale
+      background: #E56943
+    &.new
+      background: #342E58
+
+.product__price
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  padding: 17px 0 29px 0
+  color: #E56943
+  font-size: 20px
+  font-weight: 600
+  @include medium
+    flex-direction: column
+    font-size: 14px
+    padding: 0 0 10px 0
+  .old__price
+    font-size: 16px
+    font-weight: normal
+    color: rgba(96, 96, 96, 0.5)
+    text-decoration: line-through
+    @include medium
+      font-size: 10px
+  span
+    font-size: 16px
+    font-weight: normal
+    color: rgba(96, 96, 96, 0.5)
+    @include medium
+      font-size: 10px
+  .order
+    color: #342E58
+
+.products__wrapper
+  padding-bottom: 55px
+  @include medium
+    padding-bottom: 0
+  &.products__slider
+    padding-bottom: 55px
+    @include medium
+      padding-bottom: 16px
+    .slick-list
+      padding: 10px 10px 55px
+      margin: -10px 0 -50px -1px
+      @include medium
+        margin: -8px 0 -20px -1px
+  .products__item
+    padding-bottom: 35px
+    &:hover
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        width: 100%
+        height: calc(100% + 38px)
+        background: #FFFFFF
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15)
+        border-radius: 5px
+        z-index: 1
+      .products__img,
+      .products__desc
+        z-index: 2
+      .btn_buy
+        display: inline-block
+    .products__img
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 338px
+      background: #FFFFFF
+      border-radius: 5px
+      position: relative
+      @include medium
+        height: 184px
+      img
+        max-height: 100%
+    .product__tags
+      left: 16px
+      top: 12px
+      @include medium
+        flex-direction: row
+        justify-content: space-between
+        width: 100%
+        left: 0
+        padding: 0 16px
+        font-size: 10px
+        span
+          margin-bottom: 0
+    .products__desc
+      position: relative
+      padding: 25px 0 0
+      line-height: 1.5rem
+      @include medium
+        padding: 12px 0 0
+        line-height: inherit
+      a
+        &:not(.btn)
+          color: #606060
+    .products__title
+      height: 50px
+      display: block
+      @include medium
+        font-size: 12px
+    .btn_buy
+      display: none
+      position: absolute
+      width: calc(100% - 20px)
+      text-align: center
+      box-sizing: border-box
+      z-index: 20
+      &:hover
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3)
+      @include medium
+        width: calc(100% - 40px)
+
+.text
+  line-height: 1.5rem
+  @include medium
+    line-height: inherit
+    font-size: 12px
+  p
+    margin: 0 0 30px 0
+    @include medium
+      margin: 0 0 7px 0
+  .btn
+    margin-top: 5px
+    @include medium
+      display: flex
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+
+.about-company__img
+  @include medium
+    padding: 13px 0
+  img
+    max-width: 982px
+    position: relative
+    top: -110px
+    @include medium
+      max-width: 100%
+      top: 0
+
+.order__text
+  @include medium
+    order: 2
+
+.faq__img
+  @include medium
+    position: absolute
+    right: -150px
+  img
+    max-width: 1019px
+    position: relative
+    left: -265px
+    top: -220px
+    @include medium
+      max-width: 665px
+      left: 0
+      top: -60px
+
+.logotype__img
+  @include medium
+    display: flex
+    justify-content: center
+    padding-bottom: 20px
+  img
+    max-width: 793px
+    position: relative
+    top: -45px
+    left: -80px
+    z-index: -1
+    @include medium
+      max-width: 666px
+      top: 0
+      left: 0
+
+.delivery__img
+  @include medium
+    display: flex
+    justify-content: center
+  img
+    max-width: 868px
+    position: absolute
+    top: -145px
+    left: -145px
+    @include medium
+      max-width: 414px
+      position: initial
+
+.about-1__img
+  img
+    position: absolute
+    left: -29px
+    @include medium
+      left: -13%
+      top: 70px
+      max-width: 228px
+
+.about-2__img
+  @include medium
+    display: none
+  .words
+    font-weight: 600
+    letter-spacing: 0.1em
+    color: rgba(0, 0, 0, 0.2)
+    padding: 20px 0
+  img
+    position: absolute
+    max-width: 550px
+    left: -126%
+    bottom: 30px
+
+.faq__wrapper
+  .h2
+    margin: 0
+    padding: 52px 0 0
+    @include medium
+      padding: 39px 0 0
+    span
+      top: 35px
+      &::before
+        top: 115%
+        @include medium
+          top: 72%
+  p
+    font-size: 18px
+    font-weight: 300
+    color: rgba(0, 0, 0, 0.8)
+    padding-bottom: 20px
+    @include medium
+      font-size: 14px
+      padding-bottom: 30px
+
+.form
+  input
+    padding: 12px 14px 10px 14px
+    margin-bottom: 20px
+    @include medium
+      padding: 9px 11px 9px 11px
+  textarea
+    padding: 12px 14px 10px 14px
+    height: 84px
+    margin-bottom: 28px
+    @include medium
+      padding: 9px 11px 9px 11px
+  .btn__submit
+    padding: 15px 40px
+    @include medium
+      font-size: 16px
+      padding: 13px 5px
+      margin-bottom: 35px
+
+.feedback__form
+  @include medium
+    div
+      &:last-child
+        text-align: center
+
+.map__container
+  height: 427px
+  @include medium
+    height: 408px
+
+.contacts__wrapper
+  padding-left: 115px
+  @include medium
+    display: flex
+    flex-wrap: wrap
+    padding: 27px 30px
+  .box
+    padding-bottom: 30px
+    @include medium
+      width: 50%
+      padding: 0 10px
+    .title
+      color: #E56943
+      margin: 0
+    p
+      margin: 5px 0
+    a,
+    p
+      color: rgba(96, 96, 96, 0.5)
+
+.breadcrumbs
+  padding: 50px 10px 50px
+  @include medium
+    padding: 5px 20px 30px
+  a
+    color: rgba(0, 0, 0, 0.2)
+    padding-right: 50px
+    position: relative
+    &::after
+      content: url("data:image/svg+xml,%3Csvg width='21' height='8' viewBox='0 0 21 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5H20V3.5H0V4.5Z' fill='black' fill-opacity='0.2'/%3E%3C/svg%3E%0A")
+      position: absolute
+      margin-left: 15px
+    &.active
+      color: rgba(0, 0, 0, 0.5)
+      padding-right: 0
+      &::after
+        content: none
+
+.sort__wrapper
+  color: rgba(0, 0, 0, 0.2)
+  text-align: right
+  padding-bottom: 35px
+  @include medium
+    display: none
+  select
+    color: #E56943
+    border: none
+    background: transparent
+    padding-left: 18px
+
+.dropdown__menu
+  li
+    a
+      display: flex
+      position: relative
+      color: #606060
+      padding: 13px 13px 19px 23px
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        width: 92%
+        height: 1px
+        background: rgba(96, 96, 96, 0.2)
+        opacity: 0.6
+    span
+      display: flex
+      align-items: center
+      justify-content: center
+    img
+      padding-right: 16px
+      max-width: 22px
+      max-height: 22px
+    &:last-child
+      a
+        &::after
+          content: none
+    .arrow
+      display: inline-block
+      position: absolute
+      right: 0
+      top: 4px
+      width: 40px
+      height: 40px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        margin: auto
+        right: 17px
+        width: 12px
+        height: 12px
+        border-bottom: 1px solid #8D8D8D
+        border-left: 1px solid #8D8D8D
+        transform: rotate(-135deg)
+  .dropdown__item
+    @include medium
+      display: none
+      margin-bottom: 24px
+    &.active
+      @include medium
+        display: block
+        > a
+          display: none
+      > a
+        color: #FFFFFF
+        background: #342E58
+        img
+          filter: sepia(100) brightness(100)
+        .arrow
+          &::before
+            right: 13px
+            top: -5px
+            border-bottom: 1px solid #FFFFFF
+            border-left: 1px solid #FFFFFF
+            transform: rotate(-45deg)
+      .dropdown__submenu
+        display: block
+
+.dropdown__submenu
+  display: none
+  li
+    a
+      background: #F5F3FF
+      &::after
+        content: none
+      &:hover
+        text-decoration: underline
+
+.mobile-filter
+  display: none
+  margin-bottom: 20px
+  @include medium
+    display: flex
+  .mobile-filter__item
+    color: #1F1F1F
+    padding-left: 30px
+    padding-right: 20px
+    border-right: 1px solid #D3D3D3
+    position: relative
+    .filter__count
+      display: none
+    &:last-child
+      border-right: none
+    &.filter-box
+      &::before
+        content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M11.7371 7.83245H0.571359C0.413359 7.83245 0.285645 7.96045 0.285645 8.11816C0.285645 8.27588 0.413359 8.40388 0.571359 8.40388H11.7371C11.8765 9.37159 12.7088 10.1182 13.7142 10.1182C14.8168 10.1182 15.7142 9.22102 15.7142 8.11816C15.7142 7.01531 14.8168 6.11816 13.7142 6.11816C12.7088 6.11816 11.8765 6.86474 11.7371 7.83245Z' fill='%231F1F1F'/%3E%3Cpath d='M5.91279 1.71429H0.571359C0.413359 1.71429 0.285645 1.84229 0.285645 2C0.285645 2.15771 0.413359 2.28571 0.571359 2.28571H5.89479C6.00793 3.31486 6.88222 4.11829 7.94079 4.11829C8.99936 4.11829 9.87364 3.31486 9.98679 2.28571H15.4285C15.5865 2.28571 15.7142 2.15771 15.7142 2C15.7142 1.84229 15.5865 1.71429 15.4285 1.71429H9.96879C9.80393 0.742857 8.9585 0 7.94079 0C6.92307 0 6.07764 0.742857 5.91279 1.71429Z' fill='%231F1F1F'/%3E%3Cpath d='M2.28564 12.1182C1.18307 12.1182 0.285645 13.0153 0.285645 14.1182C0.285645 15.221 1.18307 16.1182 2.28564 16.1182C3.29107 16.1182 4.12336 15.3716 4.26279 14.4039H15.4285C15.5865 14.4039 15.7142 14.2759 15.7142 14.1182C15.7142 13.9605 15.5865 13.8325 15.4285 13.8325H4.26279C4.12336 12.8647 3.29107 12.1182 2.28564 12.1182Z' fill='%231F1F1F'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+        position: absolute
+        left: 0
+        top: 3px
+    &.sort-box
+      padding-left: 52px
+      &::before
+        content: url("data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18' height='2' rx='1' fill='%23565656'/%3E%3Crect y='5' width='11' height='2' rx='1' fill='%23565656'/%3E%3Crect y='10' width='6' height='2' rx='1' fill='%23565656'/%3E%3C/svg%3E%0A")
+        position: absolute
+        left: 20px
+        top: 2px
+    &.active
+      color: #E56943
+      .filter__count
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        left: 14px
+        top: -7px
+        background: #342E58
+        font-size: 8px
+        color: #ffffff
+        width: 12px
+        height: 12px
+        border-radius: 50%
+      &.filter-box
+        &::before
+          content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M11.7371 7.83245H0.571359C0.413359 7.83245 0.285645 7.96045 0.285645 8.11816C0.285645 8.27588 0.413359 8.40388 0.571359 8.40388H11.7371C11.8765 9.37159 12.7088 10.1182 13.7142 10.1182C14.8168 10.1182 15.7142 9.22102 15.7142 8.11816C15.7142 7.01531 14.8168 6.11816 13.7142 6.11816C12.7088 6.11816 11.8765 6.86474 11.7371 7.83245Z' fill='%23E56943'/%3E%3Cpath d='M5.91279 1.71429H0.571359C0.413359 1.71429 0.285645 1.84229 0.285645 2C0.285645 2.15771 0.413359 2.28571 0.571359 2.28571H5.89479C6.00793 3.31486 6.88222 4.11829 7.94079 4.11829C8.99936 4.11829 9.87364 3.31486 9.98679 2.28571H15.4285C15.5865 2.28571 15.7142 2.15771 15.7142 2C15.7142 1.84229 15.5865 1.71429 15.4285 1.71429H9.96879C9.80393 0.742857 8.9585 0 7.94079 0C6.92307 0 6.07764 0.742857 5.91279 1.71429Z' fill='%23E56943'/%3E%3Cpath d='M2.28564 12.1182C1.18307 12.1182 0.285645 13.0153 0.285645 14.1182C0.285645 15.221 1.18307 16.1182 2.28564 16.1182C3.29107 16.1182 4.12336 15.3716 4.26279 14.4039H15.4285C15.5865 14.4039 15.7142 14.2759 15.7142 14.1182C15.7142 13.9605 15.5865 13.8325 15.4285 13.8325H4.26279C4.12336 12.8647 3.29107 12.1182 2.28564 12.1182Z' fill='%23E56943'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+      &.sort-box
+        .filter__count
+          left: 35px
+        select
+          color: #E56943
+        &::before
+          content: url("data:image/svg+xml,%3Csvg width='18' height='12' viewBox='0 0 18 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='18' height='2' rx='1' fill='%23E56943'/%3E%3Crect y='5' width='11' height='2' rx='1' fill='%23E56943'/%3E%3Crect y='10' width='6' height='2' rx='1' fill='%23E56943'/%3E%3C/svg%3E%0A")
+
+.filter__wrapper
+  margin-right: 30px
+  @include medium
+    display: none
+  .filter__box
+    display: flex
+    flex-direction: column
+    padding: 19px 0 24px
+    border-bottom: 0.6px solid rgba(0, 0, 0, 0.2)
+    &:first-child
+      padding: 10px 0 24px
+  .title
+    color: rgba(0, 0, 0, 0.7)
+    padding-bottom: 18px
+
+input
+  &.none
+    width: 0
+    display: none
+    &:checked
+      &+[for]
+        &::before
+          background: #342E58 url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.85356 0.474458C9.65831 0.279185 9.34175 0.279185 9.14645 0.474458L3.15614 6.46483L0.853564 4.16225C0.658311 3.96698 0.341748 3.967 0.146455 4.16225C-0.0488184 4.3575 -0.0488184 4.67407 0.146455 4.86934L2.80259 7.52543C2.99778 7.72069 3.31458 7.72055 3.5097 7.52543L9.85356 1.18157C10.0488 0.986313 10.0488 0.669731 9.85356 0.474458Z' fill='white'/%3E%3C/svg%3E ") no-repeat center
+          border: 1px solid #342E58
+.label
+  font-size: 14px
+  color: rgba(0, 0, 0, 0.5)
+  padding-bottom: 11px
+  padding-left: 23px
+  position: relative
+  cursor: pointer
+  &:last-child
+    padding-bottom: 0
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 2px
+    width: 16px
+    height: 16px
+    border: 1px solid #C4C4C4
+    border-radius: 3px
+
+.pop-up
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100%
+  z-index: 20
+
+.filter__pop-up
+  .pop-up__body
+    position: absolute
+    bottom: 0
+    width: 100%
+    max-height: 90%
+    overflow: auto
+    background: #F9F9F9
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2)
+    border-radius: 30px 30px 0 0
+  .pop-up__title
+    font-size: 20px
+    font-weight: normal
+    color: rgba(0, 0, 0, 0.65)
+    text-align: center
+    padding: 25px 0 20px 0
+  .close
+    position: absolute
+    right: 20px
+    top: 27px
+    &::before
+      content: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.353553' y1='0.646447' x2='18.3536' y2='18.6464' stroke='%23575757'/%3E%3Cline y1='-0.5' x2='25.4558' y2='-0.5' transform='matrix(0.707107 -0.707107 -0.707107 -0.707107 0 19)' stroke='%23575757'/%3E%3C/svg%3E%0A")
+  .filter__wrapper
+    display: block
+    padding: 0 20px
+    margin-right: 0
+    margin-bottom: 80px
+    .filter__btn
+      text-align: center
+    .title
+      font-size: 16px
+      width: 100%
+    .label
+      box-sizing: border-box
+      width: 50%
+  .filter__box
+    flex-direction: row
+    flex-wrap: wrap
+    &:nth-child(3)
+      border-bottom: none !important
+
+.overlay
+  background: rgba(0, 0, 0, 0.4)
+
+.product__wrapper
+  border-top: 0.5px solid rgba(0, 0, 0, 0.15)
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15)
+  @include medium
+    border-top: none
+    border-bottom: none
+  .product__img__wrapper
+    border-right: 0.5px solid rgba(0, 0, 0, 0.15)
+    @include medium
+      border-right: none
+  .product__img
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background: #FFFFFF
+    border-radius: 5px
+    padding: 10px
+    position: relative
+    z-index: -10
+    img
+      max-height: 590px
+    .product__tags
+      right: 29px
+      left: auto
+      top: 41px
+      @include medium
+        right: 22px
+        top: 26px
+  .product__desc
+    padding: 34px 0 20px 20px
+    color: rgba(96, 96, 96, 0.5)
+    @include medium
+      padding: 23px 20px 23px 20px
+  .product__title
+    font-size: 24px
+    font-weight: bold
+    line-height: 33px
+    color: rgba(0, 0, 0, 0.75)
+    text-transform: uppercase
+    @include medium
+      color: rgba(0, 0, 0, 0.65)
+      margin-bottom: 10px
+  .product__price
+    justify-content: inherit
+    padding: 17px 0 35px
+    @include medium
+      flex-direction: row
+      font-size: 20px
+      padding: 0
+      span
+        font-size: 16px
+    .old__price
+      margin-left: 20px
+      @include medium
+        font-size: 16px
+        margin-left: 30px
+  .property__wrapper
+    li
+      padding-bottom: 20px
+      @include medium
+        padding-bottom: 11px
+      &.property__volume
+        padding-bottom: 35px
+        span
+          padding-right: 0
+      span
+        color: rgba(0, 0, 0, 0.65)
+        padding-right: 11px
+  .volume__tabs
+    display: flex
+    flex-wrap: wrap
+    color: #595959
+    margin-top: 12px
+    @include medium
+      margin-bottom: 11px
+    li
+      box-sizing: border-box
+      padding: 7px 22px
+      text-align: center
+      border: 1px solid #595959
+      border-radius: 5px
+      margin-right: 3px
+      margin-bottom: 3px
+      cursor: pointer
+      @include medium
+        padding: 9px 0
+        width: calc(100%/3 - 3px)
+        box-sizing: border-box
+      &.active
+        font-weight: 600
+        color: #FFFFFF
+        background: #342E58
+        border: 1px solid #342E58
+  .product__quantity
+    display: flex
+    @include medium
+      margin-left: 34px
+    li
+      margin-right: 55px
+      span
+        color: rgba(0, 0, 0, 0.65)
+        padding-left: 5px
+      &:last-child
+        margin-right: 0
+
+.mobile__count
+  display: flex
+  align-items: center
+
+.btn__box
+  margin-top: 34px
+  @include medium
+    display: flex
+    justify-content: space-between
+  .btn
+    border: 1px solid #E56943
+    margin-right: 41px
+    @include medium
+      margin-right: 16px
+    &:last-child
+      margin-right: 0
+    &.btn__border
+      color: #595959
+      background: transparent
+      border: 1px solid #E56943
+
+.product__count
+  display: flex
+  margin: 20px 0
+  input
+    width: 100px
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    text-align: center
+    padding: 8px 0
+    margin: 0 15px
+    @include medium
+      width: 80px
+      padding: 0
+      margin: 0 6px
+  span
+    display: block
+    position: relative
+    width: 40px
+    height: 40px
+    background: #EAEAEA
+    border-radius: 4px
+    cursor: pointer
+    @include medium
+      width: 30px
+      height: 30px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      width: 10px
+      height: 1px
+      background: #595959
+    &.plus
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+        width: 10px
+        height: 1px
+        background: #595959
+        transform: rotate(90deg)
+
+.checked__all
+  margin-bottom: 40px
+  margin-left: 15px
+  @include medium
+    margin-left: 20px
+    &+.row
+      margin-left: 20px
+      margin-right: 20px
+  label
+    font-size: 16px
+    color: rgba(0, 0, 0, 0.5)
+    padding-left: 30px
+
+.cart__wrapper
+  margin-bottom: 104px
+  @include medium
+    margin-bottom: 14px
+    padding-right: 0
+    padding-left: 0
+  .cart__item
+    background: #FFFFFF
+    box-shadow: 2px 2px 30px rgba(187, 187, 187, 0.05)
+    border-radius: 8px
+    margin-bottom: 14px
+    padding: 38px 0 30px 0
+    @include medium
+      padding: 24px 0 20px 0
+      overflow: hidden
+  .checkbox__box
+    display: flex
+    justify-content: center
+    align-items: center
+    .label
+      &::before
+        left: 4px
+        top: -8px
+        @include medium
+          left: 12px
+          top: -40px
+  .item__info
+    display: flex
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+    padding-bottom: 39px
+    @include medium
+      align-items: center
+      border-bottom: 0
+      padding-bottom: 15px
+  .item__img
+    justify-content: center
+    align-items: center
+    width: 80px
+    height: 97px
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+    padding: 5px
+    margin-right: 12px
+  .item__desc
+    width: calc(100% - 92px)
+    a
+      display: inline-block
+      color: #606060
+      padding: 10px 0 20px 0
+  .item__group
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .product__price
+      padding: 0
+      font-weight: bold
+      @include medium
+        font-size: 16px
+      .old__price
+        margin-left: 24px
+        @include medium
+          font-size: 14px
+          margin-left: 0
+    .product__count
+      margin: 0
+  .item__total
+    font-weight: bold
+    color: rgba(0, 0, 0, 0.7)
+    margin-top: 25px
+    @include medium
+      font-size: 16px
+      position: relative
+      padding-top: 15px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        width: 800px
+        left: -30%
+        height: 1px
+        background: rgba(0,0,0,.08)
+    span
+      font-size: 20px
+      color: #E56943
+      margin-left: 18px
+
+.sum__wrapper
+  background: #FFFFFF
+  box-shadow: 2px 2px 30px rgba(187, 187, 187, 0.05)
+  border-radius: 8px
+  padding: 20px 40px
+  @include medium
+    display: flex
+    align-items: center
+    background: #EEE6E3
+    box-shadow: 0 -10px 10px rgba(187, 187, 187, 0.15)
+    border-radius: 8px 8px 0 0
+    color: #606060
+    padding: 12px 20px
+    .mobile__sum
+      width: 50%
+      margin-right: 12px
+    #order
+      width: 50%
+      height: 46px
+      margin-left: 12px
+      margin-top: 0
+      margin-bottom: 0
+  .h3
+    font-size: 24px
+    font-weight: bold
+    color: rgba(0, 0, 0, 0.75)
+  .sum__list
+    color: #606060
+    padding: 5px 0 25px 0
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+    @include medium
+      padding: 0 0 7px 0
+    li
+      display: flex
+      justify-content: space-between
+      padding: 7px 0
+      @include medium
+        padding: 3px 0
+      span
+        font-weight: 600
+  .sum__total
+    display: flex
+    justify-content: space-between
+    padding: 27px 0
+    font-weight: 600
+    color: #2B2B2B
+    @include medium
+      padding: 7px 0 0 0
+      font-size: 16px
+    span
+      font-size: 20px
+      font-weight: bold
+      color: #E56943
+      @include medium
+        font-size: 16px
+  .btn
+    width: 100%
+    margin: 12px 0 26px 0
+
+.cart__form
+  form
+    background: #FFFFFF
+    box-shadow: 2px 2px 30px rgba(187, 187, 187, 0.05)
+    border-radius: 8px
+    padding: 16px 44px 40px 44px
+    @include medium
+      padding: 10px 4px 40px 4px
+    .h3
+      font-size: 24px
+      font-weight: bold
+      color: rgba(0, 0, 0, 0.75)
+      padding: 20px 0 25px 0
+      @include medium
+        font-size: 18px
+        color: rgba(0, 0, 0, 0.75)
+
+.buyer__form
+  .title
+    color: rgba(0, 0, 0, 0.7)
+    margin-right: 37px
+  input
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+    @include medium
+      margin-bottom: 9px
+    &[type='radio']
+      width: 0
+      display: none
+      &:checked+[for]
+        &::before
+          border: 2px solid #342E58
+        &::after
+          content: ''
+          position: absolute
+          left: 5px
+          top: 5px
+          width: 10px
+          height: 10px
+          background: #342e58
+          border-radius: 50%
+          box-sizing: border-box
+  textarea
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+  label
+    position: relative
+    padding-left: 30px
+    margin-right: 66px
+    @include medium
+      margin-bottom: 10px
+    &:last-child
+      margin-right: 0
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      width: 20px
+      height: 20px
+      border: 2px solid #DADADA
+      border-radius: 50%
+      box-sizing: border-box
+  .delivery__terms
+    display: flex
+    margin-top: 5px
+    @include medium
+      flex-direction: column
+      .title
+        font-size: 16px
+        margin-bottom: 13px
+
+.page__404
+  position: relative
+  height: calc(100vh - 230px)
+  display: flex
+  align-items: center
+  overflow: hidden
+  @include medium
+    text-align: center
+  &::before
+    content: url("data:image/svg+xml,%3Csvg width='1267' height='852' viewBox='0 0 1267 852' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1267V852L808.349 772.585C428.706 706.851 120.596 428.856 16.2958 57.9504L0 0Z' fill='%23E56943'/%3E%3C/svg%3E%0A")
+    position: absolute
+    top: 0
+    right: 0
+    z-index: -10
+  @include medium
+    &::before
+      content: none
+
+.wrapper__404
+  align-items: center
+  p
+    margin: 0
+    &.desc
+      margin-top: 28px
+  .title__1
+    font-size: 100px
+    color: rgba(0, 0, 0, 0.75)
+    line-height: 136px
+    @include medium
+      font-size: 50px
+      line-height: 1.5
+  .title__2
+    font-size: 40px
+    font-weight: 300
+    color: rgba(0, 0, 0, 0.75)
+    line-height: 54px
+    @include medium
+      font-size: 24px
+      line-height: 1.5
+  .img__404
+    img
+      position: relative
+      max-width: 1070px
+    @include medium
+      display: flex
+      justify-content: center
+      height: 288px
+      position: relative
+      img
+        position: absolute
+        max-width: 546px
+  @include large
+    .btn__box
+      .btn
+        margin-bottom: 20px
+
+
+
+footer
+  background: #342E58
+  color: #898594
+  padding: 47px 0
+  @include medium
+    padding: 28px 0
+    .footer__catalog
+      text-align: right
+  a
+    color: #898594
+    &:hover
+      color: #e56943
+  .title
+    color: #F7FDFF
+  .footer__navbar
+    margin-top: 62px
+    text-align: center
+    @include medium
+      margin-top: 18px
+      margin-bottom: 9px
+      padding-top: 24px
+      border-top: 1px solid rgba(137, 133, 148, 0.5)
+    a
+      position: relative
+      padding: 0 16px
+      @include medium
+        display: inline-block
+        margin-bottom: 13px
+        &:nth-child(3)
+          &::after
+            content: none
+      &:last-child
+        &::after
+          content: none
+      &::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        height: 10px
+        width: 1px
+        background: rgba(137, 133, 148, 0.5)
+

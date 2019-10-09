@@ -1,0 +1,105 @@
+doctype html
+html(lang='UTF-8')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Корзина
+        link(rel='apple-touch-icon' sizes='180x180' href='./apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png')
+        link(href='./css/libs.min.css', rel='stylesheet')
+        link(href='./css/style.min.css', rel='stylesheet')
+
+    body
+
+        include ../block/header
+
+        .section#cart
+            .container
+                .h2 Корзина
+                    span Корзина
+                .checked__all
+                    input#checked-all.none(type='checkbox')
+                    label.label(for='checked-all') Выбрать все
+                .row
+                    .lg-8.md-12.cart__wrapper
+                        .row.cart__item
+                            .lg-1.checkbox__box
+                                input#product-1.none(type='checkbox' checked)
+                                label.label(for='product-1')
+                            .lg-10
+                                .item__info
+                                    .item__img
+                                        img.img(src='./img/product-5.png' alt='')
+                                    .item__desc
+                                        a(href='#') Стаканчик бумажный однослойный 100мл для горячего, Кофе
+                                        .item__group
+                                            ul.product__price
+                                                li 2,55 BYN
+                                                li.old__price 3,40 руб
+                                            .product__count
+                                                span.minus
+                                                input.count(type='number' value='1000')
+                                                span.plus
+                                .item__total Итого:
+                                    span 2,55 BYN
+                            .lg-1.mobile__hidden
+                        .row.cart__item
+                            .lg-1.checkbox__box
+                                input#product-2.none(type='checkbox')
+                                label.label(for='product-2')
+                            .lg-10
+                                .item__info
+                                    .item__img
+                                        img.img(src='./img/product-5.png' alt='')
+                                    .item__desc
+                                        a(href='#') Стаканчик бумажный однослойный 100мл для горячего, Кофе
+                                        .item__group
+                                            ul.product__price
+                                                li 2,55 BYN
+                                                li.old__price 3,40 руб
+                                            .product__count
+                                                span.minus
+                                                input.count(type='number' value='1000')
+                                                span.plus
+                                .item__total Итого:
+                                    span 2,55 BYN
+                            .lg-1.mobile__hidden
+                        .cart__form
+                            form#buyer-info.row.form.buyer__form(action='#' method='post')
+                                .lg-12
+                                    .h3 Информация о покуателе:
+                                .lg-6.md-12
+                                    input(type='text' name='name' value='' placeholder='Ваше имя*' id='name')
+                                .lg-6.md-12
+                                    input(type='text' name='company-name' value='' placeholder='Название компании*' id='company-name')
+                                .lg-6.md-12
+                                    input(type='tel' name='phone' value='' placeholder='Номер телефона*' id='phone')
+                                .lg-6.md-12
+                                    input(type='email' name='email' value='' placeholder='E-mail' id='email')
+                                .lg-12
+                                    textarea(name='message' placeholder='Сообщение' id='message')
+                                .lg-12.delivery__terms
+                                    .title Условия доставки:
+                                    input#delivery(type='radio' name='delivery' checked)
+                                    label(for='delivery') Доставка
+                                    input#pickup(type='radio' name='delivery')
+                                    label(for='pickup') Самовывоз
+
+                    .lg-4.md-12
+                        .sum__wrapper
+                            .mobile__hidden.h3 Сумма заказа:
+                            ul.sum__list
+                                li Стоимость
+                                    span 7,65 BYN
+                                li Доставка
+                                    span 2,10 BYN
+                            .sum__box
+                                .sum__total К оплате:
+                                    span 9,75 BYN
+                                a#order.btn(href='#') Заказать
+
+        include ../block/footer
+
+        script(src='./js/libs.min.js')
+        script(src='./js/main.min.js')
