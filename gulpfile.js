@@ -12,7 +12,9 @@ const gulp         = require('gulp'),
       del          = require('del'),
       uncss        = require('gulp-uncss'),
       criticalCss  = require('gulp-critical-css'),
-      sftp         = require('gulp-sftp');
+      sftp         = require('gulp-sftp'),
+      imagemin     = require('gulp-imagemin'),
+      imgCompress  = require('imagemin-jpeg-recompress');
 
 
 gulp.task('sass', function () {
@@ -31,10 +33,9 @@ gulp.task('sass', function () {
 
 gulp.task('css-libs', function() {
     return gulp.src([
-        'app/css/normalize.css',
-        'app/css/libs/*.css'
+        ''
     ])
-        .pipe(concat('libs.css')) // Собираем их в кучу в новом файле libs.min.js
+        .pipe(concat('libs.css'))
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
         .pipe(changed('app/css/libs'))
@@ -42,7 +43,7 @@ gulp.task('css-libs', function() {
 });
 
 gulp.task('uncss', function () {
-    return gulp.src('app/css/style.css')
+    return gulp.src(['app/css/style.css', 'app/css/style.min.css'])
         .pipe(uncss({
             html: ['app/index.html']
         }))
@@ -140,8 +141,7 @@ gulp.task('browser-sync', function () {
 gulp.task('clean', async function () {
         return del.sync('dist');
     }
-)
-;
+);
 
 gulp.task('prebuild', async function () {
         let buildCss = gulp.src([
@@ -189,8 +189,24 @@ gulp.task('watch', function () {
 //         }))
 // });
 
+gulp.task('img-min', function() {
+    return gulp.src('app/img/**/*')
+        .pipe(imagemin([
+            imgCompress({
+                loops: 4,
+                min: 70,
+                max: 80,
+                quality: 'high'
+            }),
+            imagemin.gifsicle(),
+            imagemin.optipng(),
+            imagemin.svgo()
+        ]))
+        .pipe(gulp.dest('app/img'));
+});
+
 
 // Build tasks
 
-gulp.task('default', gulp.parallel('pug', 'sass', 'css-libs', 'scripts', 'scripts-libs', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('pug', 'sass', 'scripts', 'browser-sync', 'watch'));
 gulp.task('build', gulp.parallel('clean', 'prebuild'));
