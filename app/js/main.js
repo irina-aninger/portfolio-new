@@ -3,7 +3,7 @@
 
 // animation and active menu
 
-const navItem = document.querySelectorAll('.header-nav__item');
+const navItem = document.querySelectorAll('.nav-item');
 
 function activeNav(el) {
     if (el.getBoundingClientRect().top <= el.getBoundingClientRect().height / 2) {
@@ -47,14 +47,16 @@ const pagination = document.querySelectorAll('.works__nav li'),
 pagination[0].classList.add('active');
 works[0].classList.add('active');
 
-pagination.forEach(function (el) {
-    el.addEventListener('click', function () {
+for (let i=0, length=pagination.length; i<length; i++) {
+    pagination[i].addEventListener('click', function () {
         for (let i=0, length=works.length; i<length; i++) {
             if (works[i].id === this.dataset.work) {
                 works[i].classList.add('active');
+                this.classList.add('active');
             } else {
-                works[i].classList.remove('active')
+                works[i].classList.remove('active');
+                pagination[i].classList.remove('active')
             }
         }
     })
-});
+}

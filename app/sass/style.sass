@@ -6,6 +6,7 @@ $color-dark: #232426
 $color-yellow: #FAC12E
 $font-bold: bold
 $full-width: 100%
+$full-height: 100%
 
 @mixin flex
   display: flex
@@ -61,33 +62,50 @@ hr
 .capital
   text-transform: uppercase
 
-.yellow-text
+.yellow
   color: $color-yellow
+  font-weight: $font-bold
+
+.flex
+  @include flex
+
+.flex_center
+  @include flex
+  justify-content: center
+
+.flex_col
+  @include flex
+  flex-direction: column
+  justify-content: center
 
 .container
   width: $full-width
   max-width: 1200px
-  height: 100%
+  height: $full-height
   padding-left: 20px
   padding-right: 20px
   @include center
+  @include large
+    max-width: 920px
+  @include medium
+    max-width: 740px
+  @include small
+    max-width: 560px
+  @include xs-small
+    max-width: $full-width
 
 .header
   position: fixed
   width: $full-width
   background: rgba(0, 0, 0, 0.5)
-  z-index: 10
+  z-index: 20
 
 .header-wrapper
-  display: flex
+  @include flex
   justify-content: space-between
-  width: $full-width
   padding: 14px 0
-  @include center
 
-.header-nav__item
-  font-weight: $font-bold
-  color: $color-yellow
+.nav-item
   margin-right: 35px
   &:last-child
     margin-right: 0
@@ -107,11 +125,6 @@ hr
     position: absolute
     top: 30%
 
-.banner
-  @include flex
-  flex-direction: column
-  justify-content: center
-
 .banner__content
   display: flex
   font-weight: $font-bold
@@ -121,7 +134,6 @@ hr
     width: 650px
 
 .banner__item_vertical
-  position: relative
   font-size: 94px
   width: 128px
   @include medium
@@ -130,7 +142,6 @@ hr
   div
     transform: rotate(-90deg)
     position: relative
-    right: 0
     top: 215px
     @include medium
       top: 163px
@@ -148,7 +159,7 @@ hr
       width: 420px
   span
     display: inline-block
-    &.yellow-text
+    &.yellow
       font-size: 70px
       @include medium
         font-size: 52px
@@ -172,7 +183,7 @@ hr
     margin: 110px auto 0
 
 .title-wrapper
-  position: relative
+  //position: relative
   overflow: hidden
   .title
     font-size: 86px
@@ -199,22 +210,21 @@ hr
 
 
 .works-wrapper
-  width: calc(100% - 165px)
+  width: calc(100% - 145px)
   margin-left: 20px
-  margin-right: 20px
 
 .works
   display: none
+  margin: -20px
   &.active
     @include flex
-  margin: -20px
 
 .works__item
   position: relative
   height: 250px
   margin: 20px
   box-shadow: 7px 7px 0 #CABD48
-  overflow: hidden
+  background-size: cover
   &:nth-child(1)
     width: calc(65% - 40px)
     box-shadow: 7px 7px 0 #69ADB3
@@ -229,31 +239,19 @@ hr
     width: calc(52% - 40px)
     margin-right: 0
     box-shadow: 7px 7px 0 #69ADB3
-  img
-    width: $full-width
   .hidden
     display: none
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
+    width: $full-width
+    height: $full-height
     background: rgba(50, 53, 57, 0.8)
     a
-      @include flex
-      justify-content: center
       font-size: 28px
-      font-weight: $font-bold
-      color: $color-yellow
-      height: 100%
-      width: 100%
+      height: $full-height
   &:hover
     .hidden
       display: block
 
 .works__nav
-  @include flex
-  justify-content: center
   width: $full-width
   margin-top: 50px
   span
@@ -295,7 +293,6 @@ hr
         top: -7px
 
 .experience-wrapper
-  @include flex
   padding-top: 130px
   padding-bottom: 130px
   @include medium
@@ -308,7 +305,7 @@ hr
     width: $full-width
     margin-right: 0px
 
-.experience-title
+.experience__title
   display: inline-block
   font-size: 26px
   font-weight: $font-bold
@@ -322,10 +319,10 @@ hr
     bottom: 0
     right: -20px
     width: 10px
-    height: 100%
+    height: $full-height
     background: rgba(250, 193, 46, 0.8)
 
-.experience-descr
+.experience__descr
   color: #000000
   padding: 23px 30px
   margin-top: 40px
@@ -338,13 +335,13 @@ hr
     top: 0
     left: -20px
     width: 10px
-    height: 100%
+    height: $full-height
     background: rgba(228, 232, 240, 0.8)
-  .descr-title
+  .descr__title
     font-size: 22px
     font-weight: $font-bold
     color: #5A8C90
-  .descr-date
+  .descr__date
     font-size: 12px
     color: #777777
     margin-bottom: 36px
@@ -381,19 +378,18 @@ hr
       .title
         left: -12px
 
-.skills-wrapper
-  @include flex
+.skills
   width: calc(100% - 145px)
   margin: 200px 0
 
-.skill-block
+.skills__item
   height: 330px
   padding: 30px 14px
-  margin-right: 35px / 1200px * 100%
+  margin-right: 4%
   background: #323539
   border-radius: 10px
   &:first-child
-    width: 70% - (35px / 1200px * 100%)
+    width: 66%
   &:last-child
     width: 30%
   &:last-child
@@ -403,16 +399,16 @@ hr
       .bar
         background: #69ADB3
   &#tech
-    .skill-list
-      width: 47%
+    .skills__list
+      width: 48%
       &:nth-child(2)
         float: left
-        margin-right: 3%
+        margin-right: 2%
       &:last-child
         float: right
-        margin-left: 3%
+        margin-left: 2%
 
-.skill-title
+.skills__title
   font-size: 20px
   font-weight: 600
   text-transform: uppercase
@@ -420,7 +416,7 @@ hr
   width: 100%
   margin-bottom: 45px
 
-.skill-list
+.skills__list
   p
     font-size: 13px
     padding-left: 10px
@@ -507,9 +503,6 @@ hr
       .title
         top: -7px
 
-.contact-wrapper
-  @include flex
-
 .contact-img
   width: 40%
   height: 640px
@@ -518,20 +511,19 @@ hr
   background-position: center
   background-size: cover
   background-attachment: fixed
+  z-index: 10
   @include medium
     width: 40%
 
 .contact
-  @include flex
-  overflow: hidden
   .social
     margin-top: 12px
     margin-right: 37px
     transition-delay: .5s
-  .contact-title
+  .contact__title
     font-size: 36px
     font-weight: $font-bold
-  .contact-subtitle
+  .contact__subtitle
     font-size: 18px
     color: #69ADB3
   hr
@@ -539,7 +531,7 @@ hr
     height: 3px
     margin: 14px 0 0 0
     background: $color-yellow
-  .contact-list
+  .contact__list
     margin-top: 30px
     margin-bottom: 32px
     a

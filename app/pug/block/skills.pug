@@ -1,8 +1,8 @@
 .container#skills-section
-    .skills-wrapper
-        .skill-block#tech
-            .skill-title Technical
-            ul.skill-list
+    .skills.flex
+        .skills__item#tech
+            .skills__title Technical
+            ul.skills__list
                 li
                     p JavaScript
                     .progress-bar#js
@@ -19,7 +19,7 @@
                     p CSS3 / SASS / LESS
                     .progress-bar#css
                         .bar
-            ul.skill-list
+            ul.skills__list
                 li
                     p Bootstrap
                     .progress-bar#bootstrap
@@ -36,9 +36,9 @@
                     p Git
                     .progress-bar#git
                         .bar
-        .skill-block#lang
-            .skill-title Languages
-            ul.skill-list
+        .skills__item#lang
+            .skills__title Languages
+            ul.skills__list
                 li
                     p English
                     .progress-bar#eng
