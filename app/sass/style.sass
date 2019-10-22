@@ -117,7 +117,6 @@ hr
 #banner-section
   height: 100vh
   background-image: url("../img/main-banner.jpg")
-  background-repeat: no-repeat
   background-size: cover
   background-attachment: fixed
   overflow: hidden
@@ -132,6 +131,8 @@ hr
   @include center
   @include medium
     width: 650px
+  @include small
+    width: 80%
 
 .banner__item_vertical
   font-size: 94px
@@ -139,17 +140,24 @@ hr
   @include medium
     font-size: 70px
     width: 90px
+  @include small
+    font-size: 50px
+    width: 60px
   div
     transform: rotate(-90deg)
     position: relative
     top: 215px
     @include medium
       top: 163px
+    @include small
+      top: 120px
 
 .banner__item_horizontal
   font-size: 48px
   @include medium
     font-size: 42px
+  @include small
+    font-size: 26px
   hr
     width: 563px
     height: 5px
@@ -157,17 +165,23 @@ hr
     margin: 0 0 0 5px
     @include medium
       width: 420px
+    @include small
+      width: 60%
   span
     display: inline-block
     &.yellow
       font-size: 70px
       @include medium
         font-size: 52px
+      @include small
+        font-size: 34px
     &:last-child
       font-size: 30px
       padding: 53px 0
       @include medium
         padding: 38px 0
+      @include small
+        font-size: 18px
 
 .banner__btn
   color: $color-white
@@ -181,24 +195,37 @@ hr
   box-shadow: 6px 6px 0 #FFFFFF
   @include medium
     margin: 110px auto 0
+  @include small
+    width: 150px
+    padding: 12px 0
 
 .title-wrapper
-  //position: relative
   overflow: hidden
   .title
     font-size: 86px
     font-weight: $font-bold
     color: $color-dark
     position: relative
+    @include small
+      font-size: 50px
 
 #work-section
   display: flex
   padding-top: 150px
   padding-bottom: 150px
+  @include xs-small
+    padding-top: 70px
+    padding-bottom: 70px
   .title-wrapper
     width: 85px
     margin-right: 40px
     background: #69ADB3
+    @include small
+      width: 65px
+      margin-right: 20px
+    @include xs-small
+      width: 40px
+      margin-right: 10px
     .title
       top: 155px
       right: -100%
@@ -207,17 +234,25 @@ hr
     &.visible
       .title
         right: -10px
+        @include xs-small
+          right: -2px
 
 
 .works-wrapper
   width: calc(100% - 145px)
   margin-left: 20px
+  @include small
+    width: calc(100% - 105px)
+  @include xs-small
+    width: calc(100% - 70px)
 
 .works
   display: none
   margin: -20px
   &.active
     @include flex
+  @include xs-small
+    margin: -10px
 
 .works__item
   position: relative
@@ -228,17 +263,27 @@ hr
   &:nth-child(1)
     width: calc(65% - 40px)
     box-shadow: 7px 7px 0 #69ADB3
+    @include medium
+      width: calc(50% - 40px)
   &:nth-child(2)
     width: calc(35% - 40px)
     margin-right: 0
+    @include medium
+      width: calc(50% - 40px)
   &:nth-child(3)
     width: calc(24% - 40px)
+    @include medium
+      width: calc(100% - 40px)
   &:nth-child(4)
     width: calc(24% - 40px)
+    @include medium
+      width: calc(50% - 40px)
   &:nth-child(5)
     width: calc(52% - 40px)
     margin-right: 0
     box-shadow: 7px 7px 0 #69ADB3
+    @include medium
+      width: calc(50% - 40px)
   .hidden
     display: none
     width: $full-width
@@ -250,10 +295,13 @@ hr
   &:hover
     .hidden
       display: block
+  @include xs-small
+    width: 100% !important
+    margin: 10px !important
 
 .works__nav
-  width: $full-width
   margin-top: 50px
+  margin-bottom: -10px
   span
     display: block
     width: 13px
@@ -277,12 +325,15 @@ hr
 
 #experience-section
   background-image: url("../img/bg-1.jpg")
-  background-repeat: no-repeat
   background-size: cover
   background-attachment: fixed
   .title-wrapper
     height: 85px
     background: #CABD48
+    @include small
+      height: 65px
+    @include xs-small
+      height: 40px
     .title
       top: 100%
       right: 0
@@ -291,12 +342,19 @@ hr
     &.visible
       .title
         top: -7px
+        @include small
+          top: 1px
+        @include xs-small
+          top: -12px
 
 .experience-wrapper
   padding-top: 130px
   padding-bottom: 130px
   @include medium
     flex-wrap: wrap
+  @include xs-small
+    padding-top: 70px
+    padding-bottom: 70px
 
 .experience
   width: 65% - 2%
@@ -313,6 +371,9 @@ hr
   padding: 15px 50px
   background: rgba(250, 193, 46, 0.8)
   position: relative
+  @include xs-small
+    font-size: 18px
+    padding: 10px 15px
   &::after
     content: ''
     position: absolute
@@ -356,11 +417,14 @@ hr
     margin-left: 0px
     margin-top: 70px
     column-count: 3
+  @include xs-small
+    margin-top: 40px
+    column-count: 2
   li
     text-align: center
     padding: 10px 0
     margin-bottom: 20px
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(0, 0, 0, 0.6)
 
 #skills-section
   display: flex
@@ -368,6 +432,12 @@ hr
     width: 85px
     margin-left: 60px
     background: $color-yellow
+    @include small
+      width: 65px
+      margin-left: 40px
+    @include xs-small
+      width: 40px
+      margin-left: 30px
     .title
       position: relative
       left: -100%
@@ -377,10 +447,17 @@ hr
     &.visible
       .title
         left: -12px
+        @include xs-small
+          left: -2px
 
 .skills
   width: calc(100% - 145px)
   margin: 200px 0
+  @include small
+    width: calc(100% - 105px)
+  @include xs-small
+    width: calc(100% - 70px)
+    margin: 70px 0
 
 .skills__item
   height: 330px
@@ -388,10 +465,19 @@ hr
   margin-right: 4%
   background: #323539
   border-radius: 10px
+  @include medium
+    margin-right: 0
+  @include xs-small
+    height: auto
   &:first-child
     width: 66%
+    @include medium
+      width: $full-width
+      margin-bottom: 30px
   &:last-child
     width: 30%
+    @include medium
+      width: $full-width
   &:last-child
     margin-right: 0
   &#lang
@@ -407,30 +493,37 @@ hr
       &:last-child
         float: right
         margin-left: 2%
+      @include xs-small
+        width: 100%
+        float: none !important
+        margin-right: 0 !important
+        margin-left: 0 !important
 
 .skills__title
   font-size: 20px
   font-weight: 600
   text-transform: uppercase
   text-align: center
-  width: 100%
   margin-bottom: 45px
+  @include xs-small
+    margin-bottom: 30px
 
 .skills__list
   p
     font-size: 13px
-    padding-left: 10px
+    padding-left: 6px
     margin-bottom: 3px
   li
     margin-bottom: 20px
     &:last-child
       margin-bottom: 0
+      @include xs-small
+        margin-bottom: 20px
 
 .progress-bar
   position: relative
   height: 3px
   background: $color-dark
-  border-radius: 100px
   .bar
     position: absolute
     top: -1px
@@ -450,6 +543,10 @@ hr
       background: #FFFFFF
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
       border-radius: 50%
+      @include medium
+        left: 98%
+      @include xs-small
+        left: 95%
   &.visible
     &#js
       .bar
@@ -495,6 +592,10 @@ hr
     background: #69ADB3
     @include medium
       width: $full-width
+    @include small
+      height: 65px
+    @include xs-small
+      height: 40px
     .title
       text-align: center
       top: 100%
@@ -502,27 +603,42 @@ hr
     &.visible
       .title
         top: -7px
+        @include small
+          top: 1px
+        @include xs-small
+          top: -12px
 
 .contact-img
   width: 40%
   height: 640px
   background-image: url("../img/contact-img.jpg")
-  background-repeat: no-repeat
   background-position: center
   background-size: cover
   background-attachment: fixed
   z-index: 10
   @include medium
     width: 40%
+  @include small
+    width: 100%
+    height: 150px
 
 .contact
   .social
-    margin-top: 12px
+    margin-top: 7px
     margin-right: 37px
     transition-delay: .5s
+    @include xs-small
+      display: flex
+      justify-content: center
+      width: 100%
+      margin: 10px 0
+      .social__item
+        margin: 0 10px
   .contact__title
     font-size: 36px
     font-weight: $font-bold
+    @include medium
+      font-size: 30px
   .contact__subtitle
     font-size: 18px
     color: #69ADB3
@@ -533,11 +649,20 @@ hr
     background: $color-yellow
   .contact__list
     margin-top: 30px
-    margin-bottom: 32px
+    margin-bottom: 30px
     a
       color: $color-white
       &:hover
         color: $color-yellow
+  @include small
+    width: 100%
+    justify-content: center
+    margin-top: 30px
+    margin-bottom: 60px
+
+.contact__block
+  @include xs-small
+    margin: 20px 20px
 
 .social
   transform: translateX(-100%)
