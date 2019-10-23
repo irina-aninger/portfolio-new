@@ -146,8 +146,7 @@ gulp.task('clean', async function () {
 gulp.task('prebuild', async function () {
         let buildCss = gulp.src([
             'app/css/style.css',
-            'app/css/style.min.css',
-            'app/css/libs.min.css'
+            'app/css/style.min.css'
         ])
             .pipe(gulp.dest('dist/css'));
 
@@ -155,7 +154,6 @@ gulp.task('prebuild', async function () {
             .pipe(gulp.dest('dist/fonts'));
 
         let buildJs = gulp.src([
-            'app/js/libs.min.js',
             'app/js/main.js',
             'app/js/main.min.js'
         ])
@@ -169,6 +167,9 @@ gulp.task('prebuild', async function () {
 
         let buildImg = gulp.src('app/img/**/*')
             .pipe(gulp.dest('dist/img'));
+
+        let buildPdf = gulp.src('app/*.pdf')
+            .pipe(gulp.dest('dist'));
     }
 )
 ;

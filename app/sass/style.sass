@@ -57,6 +57,7 @@ p
   margin: 0
 
 hr
+  text-align: left
   border: none
 
 .capital
@@ -97,13 +98,101 @@ hr
 .header
   position: fixed
   width: $full-width
-  background: rgba(0, 0, 0, 0.5)
+  background: rgba(0, 0, 0, 0.6)
   z-index: 20
 
 .header-wrapper
   @include flex
   justify-content: space-between
-  padding: 14px 0
+  padding-top: 15px
+  padding-bottom: 15px
+  @include small
+    padding-top: 10px
+    padding-bottom: 10px
+
+.logo
+  position: relative
+  font-size: 24px
+  color: $color-white
+  font-weight: $font-bold
+  padding-left: 60px
+  @include small
+    font-size: 16px
+    padding-left: 43px
+  &:hover
+    color: $color-yellow
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    width: 48px
+    height: 40px
+    background-image: url("../img/logo.png")
+    background-size: cover
+    @include small
+      width: 36px
+      height: 30px
+
+.burger
+  display: none
+  width: 60px
+  height: 40px
+  @include small
+    display: flex
+    align-items: center
+    justify-content: flex-end
+  span
+    position: relative
+    width: 40px
+    height: 3px
+    background: #fff
+    border-radius: 700px
+    &::before
+      content: ''
+      position: absolute
+      top: -10px
+      right: 0
+      width: 50px
+      height: 3px
+      background: #fff
+      border-radius: 700px
+      transition: .3s
+    &::after
+      content: ''
+      position: absolute
+      bottom: -10px
+      right: 0
+      width: 30px
+      height: 3px
+      background: #fff
+      border-radius: 700px
+      transition: .3s
+  &.open
+    span
+      width: 0
+      &::before
+        top: 0px
+        width: 30px
+        transform: rotate(45deg)
+      &::after
+        top: 0px
+        width: 30px
+        transform: rotate(135deg)
+
+nav
+  @include small
+    display: none
+  &.open
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    width: 100%
+    padding-top: 10px
+    margin-top: 15px
+    border-top: 1px solid #69adb3
 
 .nav-item
   margin-right: 35px
@@ -113,16 +202,22 @@ hr
     color: $color-white
   &.active
     color: $color-white
+  @include small
+    margin: 5px 10px
 
 #banner-section
   height: 100vh
   background-image: url("../img/main-banner.jpg")
   background-size: cover
+  background-position: center
   background-attachment: fixed
   overflow: hidden
   .social
     position: absolute
-    top: 30%
+    height: 205px
+    top: 0
+    bottom: 0
+    margin: auto
 
 .banner__content
   display: flex
@@ -175,6 +270,8 @@ hr
         font-size: 52px
       @include small
         font-size: 34px
+      @include xs-small
+        font-size: 28px
     &:last-child
       font-size: 30px
       padding: 53px 0
@@ -182,6 +279,9 @@ hr
         padding: 38px 0
       @include small
         font-size: 18px
+      @include xs-small
+        font-size: 16px
+        padding: 23px 0
 
 .banner__btn
   color: $color-white
@@ -291,6 +391,7 @@ hr
     background: rgba(50, 53, 57, 0.8)
     a
       font-size: 28px
+      text-align: center
       height: $full-height
   &:hover
     .hidden
@@ -326,6 +427,7 @@ hr
 #experience-section
   background-image: url("../img/bg-1.jpg")
   background-size: cover
+  background-position: center
   background-attachment: fixed
   .title-wrapper
     height: 85px
