@@ -3,11 +3,11 @@
 
 // animation and active menu
 
-var navItem = document.querySelectorAll(".nav-item");
+const navItem = document.querySelectorAll(".nav-item");
 
 function activeNav(el) {
     if (el.getBoundingClientRect().top <= el.getBoundingClientRect().height / 2) {
-        for (var i = 0, length = navItem.length; i < length; i++) {
+        for (let i = 0, length = navItem.length; i < length; i++) {
             if (el.id === navItem[i].attributes[1].value.slice(1)) {
                 navItem[i].classList.add("active");
             } else {
@@ -41,15 +41,15 @@ document.addEventListener("scroll", function() {
 
 // pagination
 
-var pagination = document.querySelectorAll(".works__nav li"),
+const pagination = document.querySelectorAll(".works__nav li"),
     works = document.querySelectorAll(".works");
 
 pagination[0].classList.add("active");
 works[0].classList.add("active");
 
-for (var i = 0, length = pagination.length; i < length; i++) {
+for (let i = 0, length = pagination.length; i < length; i++) {
     pagination[i].addEventListener("click", function() {
-        for (var i = 0, _length = works.length; i < _length; i++) {
+        for (let i = 0, length = works.length; i < length; i++) {
             if (works[i].id === this.dataset.work) {
                 works[i].classList.add("active");
                 this.classList.add("active");
