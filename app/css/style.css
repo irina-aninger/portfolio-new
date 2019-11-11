@@ -1127,9 +1127,9 @@ nav.open {
   .progress-bar.visible#js .bar {
     width: 50%; }
   .progress-bar.visible#react .bar {
-    width: 20%; }
+    width: 40%; }
   .progress-bar.visible#vue .bar {
-    width: 20%; }
+    width: 30%; }
   .progress-bar.visible#html .bar {
     width: 90%; }
   .progress-bar.visible#css .bar {
