@@ -333,9 +333,9 @@ nav
       transition: .6s
     &.visible
       .title
-        right: -10px
+        right: -15px
         @include xs-small
-          right: -2px
+          right: -5px
 
 
 .works-wrapper
@@ -388,6 +388,7 @@ nav
     display: none
     width: $full-width
     height: $full-height
+    padding: 10px
     background: rgba(50, 53, 57, 0.8)
     a
       font-size: 28px
@@ -399,6 +400,101 @@ nav
   @include xs-small
     width: 100% !important
     margin: 10px !important
+  .info
+    position: absolute
+    bottom: 10px
+    right: 10px
+    width: 34px
+    height: 34px
+    background: transparent
+    border-radius: 50%
+    transition: .3s
+    span
+      position: absolute
+      bottom: 8px
+      right: 8px
+      width: 18px
+      height: 18px
+      background: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='45.999px' height='45.999px' viewBox='0 0 45.999 45.999' fill='%23FFFFFF' style='enable-background:new 0 0 45.999 45.999;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M39.264,6.736c-8.982-8.981-23.545-8.982-32.528,0c-8.982,8.982-8.981,23.545,0,32.528c8.982,8.98,23.545,8.981,32.528,0 C48.245,30.281,48.244,15.719,39.264,6.736z M25.999,33c0,1.657-1.343,3-3,3s-3-1.343-3-3V21c0-1.657,1.343-3,3-3s3,1.343,3,3V33z M22.946,15.872c-1.728,0-2.88-1.224-2.844-2.735c-0.036-1.584,1.116-2.771,2.879-2.771c1.764,0,2.88,1.188,2.917,2.771 C25.897,14.648,24.746,15.872,22.946,15.872z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E")
+      background-size: cover
+      cursor: pointer
+      &::after
+        content: ''
+        position: absolute
+        width: 30px
+        height: 30px
+        background: #333
+        z-index: -10
+    &:hover
+      background: rgba(105, 173, 179, 0.28)
+  .info-block
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    font-size: 14px
+    text-align: center
+    width: 100%
+    height: 100%
+    padding: 10px
+    background: #323539
+    @include small
+      font-size: 12px
+    a
+      font-size: 14px
+      color: #69adb3
+    .tags
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      width: 100%
+      margin-bottom: 15px
+      @include small
+        margin-bottom: 0
+      li
+        margin: 5px
+        padding: 5px
+        background: #69adb3
+        color: #323539
+        font-weight: 600
+        width: 75px
+        text-align: center
+        border-left: 2px solid #fff
+        @include small
+          width: 70px
+    .close
+      position: absolute
+      top: 10px
+      right: 10px
+      width: 25px
+      height: 25px
+      cursor: pointer
+      transition: .6s
+      &::before
+        content: ""
+        position: absolute
+        width: 2px
+        height: 20px
+        top: 3px
+        left: 12px
+        transform: rotate(45deg)
+        background: #69adb3
+      &::after
+        content: ""
+        position: absolute
+        width: 2px
+        height: 20px
+        top: 3px
+        left: 12px
+        transform: rotate(135deg)
+        background: #69adb3
+      &:hover
+        transform: rotate(-90deg)
+    &.open
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-end
+      justify-content: center
 
 .works__nav
   margin-top: 50px
@@ -443,11 +539,11 @@ nav
       transition: .6s
     &.visible
       .title
-        top: -7px
+        top: 6px
         @include small
-          top: 1px
+          top: 20px
         @include xs-small
-          top: -12px
+          top: -5px
 
 .experience-wrapper
   padding-top: 130px
@@ -548,9 +644,9 @@ nav
       transition: .6s
     &.visible
       .title
-        left: -12px
+        left: -15px
         @include xs-small
-          left: -2px
+          left: -5px
 
 .skills
   width: calc(100% - 145px)
@@ -648,12 +744,15 @@ nav
       @include medium
         left: 98%
       @include xs-small
-        left: 95%
+        left: 97%
   &.visible
     &#js
       .bar
         width: 50%
     &#react
+      .bar
+        width: 20%
+    &#vue
       .bar
         width: 20%
     &#html
@@ -704,11 +803,11 @@ nav
       transition: .6s
     &.visible
       .title
-        top: -7px
+        top: 6px
         @include small
-          top: 1px
+          top: 20px
         @include xs-small
-          top: -12px
+          top: -5px
 
 .contact-img
   width: 40%

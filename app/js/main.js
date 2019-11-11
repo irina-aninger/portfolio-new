@@ -68,3 +68,21 @@ document.querySelector(".burger").addEventListener("click", function() {
     this.classList.toggle("open");
     document.querySelector("nav").classList.toggle("open");
 });
+
+
+// info
+
+let info  = document.querySelectorAll(".info"),
+    close = document.querySelectorAll(".close");
+
+info.forEach(function (el) {
+    el.addEventListener("click", function() {
+        this.nextElementSibling.classList.add("open")
+    });
+});
+
+close.forEach(function (el) {
+    el.addEventListener("click", function() {
+        this.parentElement.classList.remove("open")
+    });
+});
