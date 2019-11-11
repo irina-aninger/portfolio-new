@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14c7a338-ce9e-4ab6-a627-c267006acc7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensans.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensans.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensans.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensansbold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensansbold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensansbold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanslight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanslight.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanslight.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanssemibold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanssemibold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/opensanssemibold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pug/block/skills.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/pug/block/skills.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pug/block/work.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/pug/block/work.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sass/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/app/sass/style.sass" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +58,7 @@
       <workItem from="1570633200976" duration="25742000" />
       <workItem from="1571641464864" duration="55817000" />
       <workItem from="1572452271323" duration="468000" />
-      <workItem from="1573460528178" duration="8464000" />
+      <workItem from="1573460528178" duration="9150000" />
     </task>
     <servers />
   </component>
