@@ -64,7 +64,8 @@ gulp.task('scripts', function () {
 gulp.task('scripts-libs', function() {
     return gulp.src([
         'app/js/libs/jquery.js',
-        'app/js/libs/aos.js'
+        'app/js/libs/aos.js',
+        'app/js/libs/particles.js'
     ])
         .pipe(concat('libs.js'))
         .pipe(jsmin())

@@ -439,6 +439,11 @@ nav.open {
     .nav-item {
       margin: 5px 10px; } }
 
+#particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
 #banner-section {
   height: 100vh;
   background-image: url("../img/main-banner.jpg");
