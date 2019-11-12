@@ -727,7 +727,8 @@ nav.open {
       background: rgba(255, 255, 255, 0);
       -webkit-transition: .4s;
       -o-transition: .4s;
-      transition: .4s; }
+      transition: .4s;
+      z-index: -1; }
     .works__item .hidden a {
       font-size: 28px;
       text-align: center;
