@@ -5,13 +5,13 @@ const gulp         = require('gulp'),
       pug          = require('gulp-pug'),
       htmlbeautify = require('gulp-html-beautify'),
       jsmin        = require('gulp-jsmin'),
+      babel        = require('gulp-babel'),
       concat       = require('gulp-concat'),
       rename       = require('gulp-rename'),
       changed      = require('gulp-changed'),
       browserSync  = require('browser-sync'),
       del          = require('del'),
       uncss        = require('gulp-uncss'),
-      criticalCss  = require('gulp-critical-css'),
       sftp         = require('gulp-sftp'),
       imagemin     = require('gulp-imagemin'),
       imgCompress  = require('imagemin-jpeg-recompress');
@@ -33,7 +33,7 @@ gulp.task('sass', function () {
 
 gulp.task('css-libs', function() {
     return gulp.src([
-        ''
+        'app/css/libs/*.css'
     ])
         .pipe(concat('libs.css'))
         .pipe(cssnano())
@@ -50,17 +50,11 @@ gulp.task('uncss', function () {
         .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('criticalCss', function () {
-    gulp.src('app/css/style.css')
-        .pipe(criticalCss())
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(changed('app/css'))
-        .pipe(gulp.dest('app/css'))
-});
-
 gulp.task('scripts', function () {
     return gulp.src(['app/js/main.js'])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(jsmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(changed('app/js'))
@@ -69,7 +63,8 @@ gulp.task('scripts', function () {
 
 gulp.task('scripts-libs', function() {
     return gulp.src([
-        'app/js/libs/*.js'
+        'app/js/libs/jquery.js',
+        'app/js/libs/aos.js'
     ])
         .pipe(concat('libs.js'))
         .pipe(jsmin())
@@ -119,25 +114,6 @@ gulp.task('browser-sync', function () {
     });
 });
 
-// gulp.task('scripts_libs', function() {
-//     return gulp.src([
-//         'app/js/libs/jquery.js'
-//     ])
-//         .pipe(concat('libs.min.js'))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('app/js'));
-// });
-
-// gulp.task('css-libs', function() {
-//     return gulp.src([ // Берем все необходимые библиотеки
-//         'app/libs/slick-carousel/slick/slick.css',
-//         'app/libs/wow/css/libs/animate.css'
-//     ])
-//         .pipe(concat('libs.css'))
-//         .pipe(cssnano())
-//         .pipe(gulp.dest('app/css'));
-// });
-
 gulp.task('clean', async function () {
         return del.sync('dist');
     }
@@ -145,6 +121,7 @@ gulp.task('clean', async function () {
 
 gulp.task('prebuild', async function () {
         let buildCss = gulp.src([
+            'app/css/libs.min.css',
             'app/css/style.css',
             'app/css/style.min.css'
         ])
@@ -154,6 +131,7 @@ gulp.task('prebuild', async function () {
             .pipe(gulp.dest('dist/fonts'));
 
         let buildJs = gulp.src([
+            'app/js/libs.min.js',
             'app/js/main.js',
             'app/js/main.min.js'
         ])
@@ -209,5 +187,5 @@ gulp.task('img-min', function() {
 
 // Build tasks
 
-gulp.task('default', gulp.parallel('pug', 'sass', 'scripts', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('pug', 'sass', 'css-libs', 'scripts', 'scripts-libs', 'browser-sync', 'watch'));
 gulp.task('build', gulp.parallel('clean', 'prebuild'));

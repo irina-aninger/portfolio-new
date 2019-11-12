@@ -540,6 +540,7 @@ nav.open {
           padding: 23px 0; } }
 
 .banner__btn {
+  position: relative;
   color: #FFFFFF;
   font-weight: bold;
   width: 173px;
@@ -549,7 +550,22 @@ nav.open {
   background: #FAC12E;
   border-radius: 50px;
   -webkit-box-shadow: 6px 6px 0 #FFFFFF;
-          box-shadow: 6px 6px 0 #FFFFFF; }
+          box-shadow: 6px 6px 0 #FFFFFF;
+  overflow: hidden; }
+  .banner__btn::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #cabd48;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
+    z-index: -10; }
+  .banner__btn:hover::before {
+    left: 0; }
   @media (max-width: 991px) {
     .banner__btn {
       margin: 110px auto 0; } }
@@ -688,17 +704,43 @@ nav.open {
         width: -webkit-calc(50% - 40px);
         width: calc(50% - 40px); } }
   .works__item .hidden {
-    display: none;
+    display: block;
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 10px;
-    background: rgba(50, 53, 57, 0.8); }
+    background: rgba(50, 53, 57, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s; }
+    .works__item .hidden::before {
+      content: "";
+      position: absolute;
+      right: -100%;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0);
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s; }
     .works__item .hidden a {
       font-size: 28px;
       text-align: center;
       height: 100%; }
   .works__item:hover .hidden {
-    display: block; }
+    opacity: 1; }
+    .works__item:hover .hidden::before {
+      right: 0;
+      background: rgba(255, 255, 255, 0.1); }
+  .works__item:hover .info {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1); }
   @media (max-width: 575px) {
     .works__item {
       width: 100% !important;
@@ -711,9 +753,16 @@ nav.open {
     height: 34px;
     background: transparent;
     border-radius: 50%;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s; }
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    -webkit-transition-delay: .2s;
+         -o-transition-delay: .2s;
+            transition-delay: .2s;
+    z-index: 10; }
     .works__item .info span {
       position: absolute;
       bottom: 8px;
@@ -726,14 +775,31 @@ nav.open {
       .works__item .info span::after {
         content: '';
         position: absolute;
-        width: 30px;
-        height: 30px;
-        background: #333;
+        top: -4px;
+        right: -4px;
+        width: 26px;
+        height: 26px;
+        background: rgba(105, 173, 179, 0.28);
+        border-radius: 50%;
         z-index: -10; }
     .works__item .info:hover {
       background: rgba(105, 173, 179, 0.28); }
   .works__item .info-block {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -742,7 +808,13 @@ nav.open {
     width: 100%;
     height: 100%;
     padding: 10px;
-    background: #323539; }
+    background: rgba(50, 53, 57, 0.9);
+    -webkit-transform: translateX(110%);
+        -ms-transform: translateX(110%);
+            transform: translateX(110%);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s; }
     @media (max-width: 767px) {
       .works__item .info-block {
         font-size: 12px; } }
@@ -815,21 +887,10 @@ nav.open {
             -ms-transform: rotate(-90deg);
                 transform: rotate(-90deg); }
     .works__item .info-block.open {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-      -webkit-box-align: end;
-      -webkit-align-items: flex-end;
-          -ms-flex-align: end;
-              align-items: flex-end;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
+      -webkit-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+              transform: translateX(0%);
+      z-index: 20; }
 
 .works__nav {
   margin-top: 50px;
@@ -860,7 +921,8 @@ nav.open {
   background-image: url("../img/bg-1.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  overflow: hidden; }
   #experience-section .title-wrapper {
     height: 85px;
     background: #CABD48; }
@@ -978,6 +1040,8 @@ nav.open {
     padding: 10px 0;
     margin-bottom: 20px;
     background: rgba(0, 0, 0, 0.6); }
+    .cms li:hover {
+      background: rgba(0, 0, 0, 0.7); }
 
 #skills-section {
   display: -webkit-box;
@@ -1127,9 +1191,9 @@ nav.open {
   .progress-bar.visible#js .bar {
     width: 50%; }
   .progress-bar.visible#react .bar {
-    width: 20%; }
+    width: 40%; }
   .progress-bar.visible#vue .bar {
-    width: 20%; }
+    width: 30%; }
   .progress-bar.visible#html .bar {
     width: 90%; }
   .progress-bar.visible#css .bar {
@@ -1264,9 +1328,9 @@ nav.open {
   -o-transition: transform .6s;
   transition: transform .6s;
   transition: transform .6s, -webkit-transform .6s;
-  -webkit-transition-delay: 2s;
-       -o-transition-delay: 2s;
-          transition-delay: 2s; }
+  -webkit-transition-delay: 1s;
+       -o-transition-delay: 1s;
+          transition-delay: 1s; }
   .social.visible {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);

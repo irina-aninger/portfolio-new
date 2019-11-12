@@ -284,6 +284,7 @@ nav
         padding: 23px 0
 
 .banner__btn
+  position: relative
   color: $color-white
   font-weight: $font-bold
   width: 173px
@@ -293,6 +294,20 @@ nav
   background: $color-yellow
   border-radius: 50px
   box-shadow: 6px 6px 0 #FFFFFF
+  overflow: hidden
+  &::before
+    content: ""
+    position: absolute
+    left: -100%
+    top: 0
+    width: 100%
+    height: 100%
+    background: #cabd48
+    transition: .6s
+    z-index: -10
+  &:hover
+    &::before
+      left: 0
   @include medium
     margin: 110px auto 0
   @include small
@@ -385,18 +400,37 @@ nav
     @include medium
       width: calc(50% - 40px)
   .hidden
-    display: none
+    display: block
+    position: relative
     width: $full-width
     height: $full-height
     padding: 10px
     background: rgba(50, 53, 57, 0.8)
+    backdrop-filter: blur(5px)
+    opacity: 0
+    overflow: hidden
+    transition: .2s
+    &::before
+      content: ""
+      position: absolute
+      right: -100%
+      top: 0
+      width: 50%
+      height: 100%
+      background: hsla(0,0%,100%,0)
+      transition: .4s
     a
       font-size: 28px
       text-align: center
       height: $full-height
   &:hover
     .hidden
-      display: block
+      opacity: 1
+      &::before
+        right: 0
+        background: hsla(0,0%,100%,.1)
+    .info
+      transform: scale(1)
   @include xs-small
     width: 100% !important
     margin: 10px !important
@@ -408,7 +442,10 @@ nav
     height: 34px
     background: transparent
     border-radius: 50%
-    transition: .3s
+    transform: scale(0)
+    transition: .2s
+    transition-delay: .2s
+    z-index: 10
     span
       position: absolute
       bottom: 8px
@@ -421,14 +458,20 @@ nav
       &::after
         content: ''
         position: absolute
-        width: 30px
-        height: 30px
-        background: #333
+        top: -4px
+        right: -4px
+        width: 26px
+        height: 26px
+        background: rgba(105, 173, 179, 0.28)
+        border-radius: 50%
         z-index: -10
     &:hover
       background: rgba(105, 173, 179, 0.28)
   .info-block
-    display: none
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-end
+    justify-content: center
     position: absolute
     top: 0
     left: 0
@@ -437,7 +480,9 @@ nav
     width: 100%
     height: 100%
     padding: 10px
-    background: #323539
+    background: rgba(50, 53, 57, 0.9)
+    transform: translateX(110%)
+    transition: .3s
     @include small
       font-size: 12px
     a
@@ -491,10 +536,8 @@ nav
       &:hover
         transform: rotate(-90deg)
     &.open
-      display: flex
-      flex-wrap: wrap
-      align-items: flex-end
-      justify-content: center
+      transform: translateX(0%)
+      z-index: 20
 
 .works__nav
   margin-top: 50px
@@ -525,6 +568,7 @@ nav
   background-size: cover
   background-position: center
   background-attachment: fixed
+  overflow: hidden
   .title-wrapper
     height: 85px
     background: #CABD48
@@ -623,6 +667,8 @@ nav
     padding: 10px 0
     margin-bottom: 20px
     background: rgba(0, 0, 0, 0.6)
+    &:hover
+      background: rgba(0, 0, 0, 0.7)
 
 #skills-section
   display: flex
@@ -868,7 +914,7 @@ nav
 .social
   transform: translateX(-100%)
   transition: transform .6s
-  transition-delay: 2s
+  transition-delay: 1s
   &.visible
     transform: translateX(0)
   .social__item

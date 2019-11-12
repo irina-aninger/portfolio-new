@@ -1,5 +1,9 @@
 "use strict";
 
+AOS.init();
+
+// type text
+
 
 // animation and active menu
 
